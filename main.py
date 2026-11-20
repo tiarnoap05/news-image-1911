@@ -15,11 +15,14 @@ DST = Path("/output/entry.png")
 
 
 def main() -> None:
+    if not SRC.is_file():
+        raise SystemExit(f"entry.png missing next to main.py: {SRC}")
     DST.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(SRC, DST)
-    if DST.stat().st_size != SRC.stat().st_size:
+    src_size = SRC.stat().st_size
+    if DST.stat().st_size != src_size:
         raise SystemExit("output size differs from entry.png; refusing to report success")
-    print(f"wrote {DST} ({DST.stat().st_size} bytes)")
+    print(f"wrote {DST} ({src_size} bytes, matches entry.png)")
 
 
 if __name__ == "__main__":

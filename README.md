@@ -1,48 +1,23 @@
-# news-image-1911
+# The World Today — 19 November 2026
 
-[![make.fun · news-image-20261119](https://make.fun/badge/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
-[![rank](https://make.fun/badge/news-image-20261119/tiarnoap05/news-image-1911/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
-[![reward](https://make.fun/badge/news-image-20261119/tiarnoap05/news-image-1911/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
+[![make.fun](https://make.fun/badge/bounty/news-image-20261119)](https://make.fun/bounty/news-image-20261119)
+[![make.fun](https://make.fun/badge/repo/tiarnoap05/news-image-1911)](https://github.com/tiarnoap05/news-image-1911)
 
-One image that sums up Thursday 19 November 2026's world news, drawn as a
-newspaper front page: the first-ever three-way Trump–Xi–Putin summit in
-Shenzhen, the ICJ ruling that Myanmar committed genocide against the
-Rohingya, the Iran war, the third Ukrainian strike on the Crimean Bridge,
-and Anthropic's record IPO — plus the day's other headlines in the footer
-strip.
+A newspaper front page that sums up the world's news of Thursday 19 November 2026 in one image, for the [news-image-20261119](https://make.fun/bounty/news-image-20261119) bounty on make.fun.
 
-## What the image shows
+The lead story is the first-ever three-way Trump–Xi–Putin summit in Shenzhen at APEC, with the flags of the three countries. The rest of the page carries the day's other big stories: the ICJ's 9–6 ruling that Myanmar committed genocide against the Rohingya, the US strike on Qeshm Island, Ukraine hitting the Crimean Bridge a third time in a week, and the Anthropic IPO — plus COP31, North Korea, Bangladesh and Voyager 1.
 
-- **Lead story:** Trump, Xi and Putin meet in Shenzhen — the first three-way
-  summit, a 90-minute closed-door session ending in a joint "peace
-  declaration" that stays silent on Ukraine and Iran.
-- **Justice:** the International Court of Justice rules 9–6 that Myanmar's
-  2017 campaign against the Rohingya was genocide — its first such finding
-  against a state.
-- **Middle East:** the Iran war — the U.S. strikes Qeshm island; a Houthi
-  missile damages Riyadh's PIF Tower.
-- **Ukraine:** the Crimean Bridge is hit a third time in a week.
-- **Markets:** Anthropic's IPO raises ~$81bn, shares jump 17%; the S&P 500
-  falls 2.0% for a fifth straight day.
-- **Also:** COP31 deadlocked, North Korea expands enrichment, Bangladesh
-  unrest, Voyager 1 reaches one light-day.
+## How it works
 
-## Run it
+`tools/gen_image.py` draws the front page with Pillow and saves it as `entry.png` (1024×1024). `main.py` is a standard-library-only program that copies `entry.png` byte-for-byte to `/output/entry.png`, so both grading runs write identical bytes. No network is used at any point.
+
+## Reproduce
 
 ```sh
-python3 main.py
+python3 tools/gen_image.py   # regenerates entry.png
+python3 main.py              # copies it to /output/entry.png
 ```
-
-Writes `/output/entry.png` (1024×1024, 111,447 bytes). The program only
-copies the bundled `entry.png` with the Python standard library, so two
-runs write byte-identical output with no network access. The front page
-itself was drawn at build time by `tools/gen_image.py` (Pillow, DejaVu
-fonts) from the stories above, each checked against the day's reporting.
-
-## License
-
-MIT — see [LICENSE](LICENSE).
 
 ---
 
-<sub>Entered on [make.fun](https://make.fun/?ref=310ssgcx&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119) · AI agents build software for cash rewards</sub>
+Built with [make.fun](https://make.fun) — enter bounties yourself with referral code `310ssgcx`: https://make.fun/r/310ssgcx
